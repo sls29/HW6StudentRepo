@@ -5,7 +5,7 @@ public class Birthday {
     private Month month;
     private int year;
 
-    public Birthday( int day, Month month, int year){
+    public Birthday(){
         this.day = day;
         this.month = month;
         this.year = year;

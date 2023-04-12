@@ -1,25 +1,24 @@
 package StudentRepo;
 
-public class Student {
+public class Student extends Birthday {
 
     private String firstName;
     private String lastName;
-    private Birthday birthDay;
     private Gender gender;
     private int cnp;
 
-    public Student( String firstName, String lastName, Birthday birthDay,
+    public Student( String firstName, String lastName, int day, Month mount, int year,
                     Gender gender, int cnp) {
+        super();
         this.firstName = firstName;
         this.lastName = lastName;
-        this.birthDay = birthDay;
         this.gender = gender;
         this.cnp = cnp;
     }
 
     public String toString(){
         String s1 = firstName + " " + lastName + "; Day of birth: " +
-                birthDay + "; " + gender + "; CNP: " + cnp;
+                super.toString() + "; " + gender + "; CNP: " + cnp;
         return s1;
     }
 }
