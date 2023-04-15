@@ -12,10 +12,18 @@ public class App
 {
     public static void main( String[] args )
     {
-        TreeSet<Student> students = new TreeSet<Student>();
+    Aplic aplic = new Aplic();
 
 
-        students.add( new Student("John", "Doe", 10, Month.JANUARY,
-                        2001, MALE, 1234567890));
+        aplic.addStudent("John", "Doe", 10, Month.JANUARY,
+                        2001, MALE, 1234567890);
+
+        aplic.addStudent("", "",10, Month.JANUARY,
+                2001, MALE, 1234567890);
+
+        aplic.addStudent("Do", "Re", 10, Month.JANUARY,
+                2012, MALE, 1234567890);
+
+
     }
 }

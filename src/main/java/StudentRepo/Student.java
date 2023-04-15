@@ -2,10 +2,10 @@ package StudentRepo;
 
 public class Student extends Birthday {
 
-    private String firstName;
-    private String lastName;
-    private Gender gender;
-    private int cnp;
+    protected String firstName;
+    protected String lastName;
+    protected Gender gender;
+    protected int cnp;
 
     public Student( String firstName, String lastName, int day, Month mount, int year,
                     Gender gender, int cnp) {
