@@ -5,7 +5,10 @@ public class Birthday {
     private Month month;
     private int year;
 
-    public Birthday(){
+    public Birthday(int day, Month month, int year){
+        this.day = day;
+        this.month = month;
+        this.year = year;
 
     }
     public String toString(){

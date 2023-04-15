@@ -5,11 +5,11 @@ public class Student extends Birthday {
     protected String firstName;
     protected String lastName;
     protected Gender gender;
-    protected long cnp;
+    protected Double cnp;
 
-    public Student( String firstName, String lastName, int day, Month mount, int year,
-                    Gender gender, long cnp) {
-        super();
+    public Student( String firstName, String lastName, int day, Month month, int year,
+                    Gender gender, Double cnp) {
+        super(day, month, year);
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;

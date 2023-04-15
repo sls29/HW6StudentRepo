@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Year;
 import java.util.Date;
+import java.util.Objects;
 import java.util.TreeSet;
 
 
@@ -14,7 +15,7 @@ public class Aplic {
 
 
     public String addStudent(String firstName, String lastName, int day, Month mount, int year,
-                           Gender gender, long cnp) {
+                           Gender gender, Double cnp) {
 
         Student student = new Student(firstName, lastName, day, mount, year, gender, cnp);
 
@@ -24,7 +25,7 @@ public class Aplic {
             return s1;
 
         } else if ((year < 1900) || ((Year.now().getValue() - 18) < year)){
-            String s2 = timeStamp + " - Age problem";
+            String s2 = timeStamp + " - This person is too young or too old to be a student";
             System.out.println(s2);
             return s2;
 
@@ -36,7 +37,30 @@ public class Aplic {
             return s3;
         }
     }
+    public String listAllStudents(){
+        for (Student nextStudent : Students ){
+            if(nextStudent.cnp != null ) {
+                System.out.println(nextStudent);
+            }
+        }
+        String s1 = "All students listed";
+        return s1;
+    }
 
-
+    public String removeStudent(Double cnp){
+        String firstName = null;
+        String lastName = null;
+        String s1 = null;
+        for (Student nextStudent : Students) {
+            if (Objects.equals(nextStudent.cnp, cnp)) {
+            nextStudent.cnp = null;
+            firstName = nextStudent.firstName;
+            lastName = nextStudent.lastName;
+            s1 = "Student " + firstName + " " + lastName + " was deleted.";
+            System.out.println(s1);
+            }
+        }
+        return s1;
+    }
 
 }
