@@ -35,39 +35,61 @@ public class App
 
         Aplic aplic = new Aplic();
 
-        aplic.addStudent("John", "Doe", 10, Month.JANUARY,
-                2001, MALE, 123456789d);
-        logger.info(aplic.addStudent("John", "Doe", 10, Month.JANUARY,
-                2001, MALE, 123456789d));
+        aplic.addStudent("John", "Doe", 2001, Month.JAN,
+                "10", MALE, "1234567890123");
+        logger.info(aplic.addStudent("John", "Doe", 2001, Month.JAN,
+                "10", MALE, "1234567890123"));
 
-        aplic.addStudent("Billy", "Joy", 3, Month.MARCH,
-                1991, MALE, 123466789d);
-        logger.info(aplic.addStudent("Billy", "Joy", 3, Month.MARCH,
-                1991, MALE, 123466789d));
+        aplic.addStudent("Billy", "Joy", 1991, Month.MAR,
+                "03", MALE, "1234667890123");
+        logger.info(aplic.addStudent("Billy", "Joy", 1991, Month.MAR,
+                "03", MALE, "1234667890123"));
 
-        aplic.addStudent("Lita", "Ford", 21, Month.APRIL,
-                1994, FEMALE, 223456789d);
-        logger.info(aplic.addStudent("Lita", "Ford", 21, Month.APRIL,
-                1994, FEMALE, 223456789d));
+        aplic.addStudent("Lita", "Ford", 1994, Month.APR,
+                "21", FEMALE, "2234567890123");
+        logger.info(aplic.addStudent("Lita", "Ford", 1994, Month.APR,
+                "21", FEMALE, "2234567890123"));
 
-        aplic.addStudent("", "",10, Month.AUGUST,
-                2001, MALE, 123456789d);
-        logger.info(aplic.addStudent("", "",10, Month.AUGUST,
-                2001, MALE, 123456789d));
+        aplic.addStudent("", "",2001, Month.AUG,
+                "24", MALE, "1234567890123");
+        logger.info(aplic.addStudent("", "",2001, Month.AUG,
+                "24", MALE, "1234567890123"));
 
-        aplic.addStudent("Do", "Re", 10, Month.DECEMBER,
-                2012, MALE, 123456789d);
-        logger.info(aplic.addStudent("Do", "Re", 10, Month.DECEMBER,
-                2012, MALE, 123456789d));
+        aplic.addStudent("Do", "Re", 2002, Month.DEC,
+                "02", MALE, "123456789012");
+        logger.info(aplic.addStudent("Do", "Re", 2002, Month.DEC,
+                "02", MALE, "123456789012"));
+
+        aplic.addStudent("Do", "Re", 2012, Month.NOV,
+                "02", MALE, "1234567890123");
+        logger.info(aplic.addStudent("Do", "Re", 2012, Month.NOV,
+                "02", MALE, "1234567890123"));
 
         aplic.listAllStudents();
         logger.info(aplic.listAllStudents());
 
-        aplic.removeStudent(123456789d);
-        logger.info(aplic.removeStudent(123456789d));
+        aplic.removeStudent("123456789");
+        logger.info(aplic.removeStudent("123456789"));
 
         aplic.listAllStudents();
         logger.info(aplic.listAllStudents());
+
+        aplic.listStudentsAtAgeOf("22");
+
+        aplic.listStudentsAtAgeOf("28");
+
+        aplic.listStudentsAtAgeOf("19");
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }

@@ -5,10 +5,10 @@ public class Student extends Birthday {
     protected String firstName;
     protected String lastName;
     protected Gender gender;
-    protected Double cnp;
+    protected String cnp;
 
-    public Student( String firstName, String lastName, int day, Month month, int year,
-                    Gender gender, Double cnp) {
+    public Student(String firstName, String lastName, String day, Month month, int year,
+                   Gender gender, String cnp) {
         super(day, month, year);
         this.firstName = firstName;
         this.lastName = lastName;
@@ -16,6 +16,9 @@ public class Student extends Birthday {
         this.cnp = cnp;
     }
 
+    public String studentBirthday(){
+        return super.toString();
+    }
     public String toString(){
         String s1 = firstName + " " + lastName + "; Day of birth: " +
                 super.toString() + "; " + gender + "; CNP: " + cnp;
