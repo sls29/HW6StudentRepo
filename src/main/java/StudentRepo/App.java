@@ -24,6 +24,5 @@ public class App
         aplic.addStudent("Do", "Re", 10, Month.JANUARY,
                 2012, MALE, 1234567890);
 
-
     }
 }
