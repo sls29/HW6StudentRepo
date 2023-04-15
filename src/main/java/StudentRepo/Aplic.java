@@ -5,33 +5,38 @@ import java.text.SimpleDateFormat;
 import java.time.Year;
 import java.util.Date;
 import java.util.TreeSet;
-import java.util.logging.FileHandler;
-import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
+
 
 public class Aplic {
     TreeSet<Student> Students = new TreeSet<Student>(new NameComparator());
     SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy.HH:mm:ss");
     String timeStamp = df.format(new Date());
-    Logger logger = Logger.getLogger("AppLog");
 
-    public void addStudent(String firstName, String lastName, int day, Month mount, int year,
-                           Gender gender, int cnp) {
+
+    public String addStudent(String firstName, String lastName, int day, Month mount, int year,
+                           Gender gender, long cnp) {
 
         Student student = new Student(firstName, lastName, day, mount, year, gender, cnp);
 
         if (student.firstName.isEmpty() || student.lastName.isEmpty()) {
-            System.out.println(timeStamp + " - First name or last name cannot be empty");
-            logger.info(timeStamp + " - First name or last name cannot be empty");
+            String s1 = timeStamp + " - First name or last name cannot be empty";
+            System.out.println(s1);
+            return s1;
 
         } else if ((year < 1900) || ((Year.now().getValue() - 18) < year)){
-            System.out.println(timeStamp + " - Age problem");
-            logger.info(timeStamp + " - Age problem");
+            String s2 = timeStamp + " - Age problem";
+            System.out.println(s2);
+            return s2;
 
         } else {
             Students.add(student);
-            System.out.println(timeStamp + " - New student added");
-            logger.info(timeStamp + " - New student added");
+            String s3 = timeStamp + " - " + student.firstName + " "
+                    + student.lastName + " - is a new student";
+            System.out.println(s3);
+            return s3;
         }
     }
+
+
+
 }

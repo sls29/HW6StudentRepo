@@ -6,9 +6,7 @@ public class Birthday {
     private int year;
 
     public Birthday(){
-        this.day = day;
-        this.month = month;
-        this.year = year;
+
     }
     public String toString(){
         return (day + "-" + month + "-" + year);

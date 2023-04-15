@@ -1,0 +1,10 @@
+Apr 15, 2023 1:26:21 PM StudentRepo.App main
+INFO: StudentRepo Logs
+Apr 15, 2023 1:26:21 PM StudentRepo.App main
+INFO: 15/04/2023.13:26:21 - John Doe - is a new student
+Apr 15, 2023 1:26:21 PM StudentRepo.App main
+INFO: 15/04/2023.13:26:21 - Lita Ford - is a new student
+Apr 15, 2023 1:26:21 PM StudentRepo.App main
+INFO: 15/04/2023.13:26:21 - First name or last name cannot be empty
+Apr 15, 2023 1:26:21 PM StudentRepo.App main
+INFO: 15/04/2023.13:26:21 - Age problem
