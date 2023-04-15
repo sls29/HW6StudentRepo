@@ -1,7 +1,6 @@
 package StudentRepo;
 
 import java.io.IOException;
-import java.util.TreeSet;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
@@ -27,9 +26,7 @@ public class App
             fh.setFormatter(formatter);
             logger.info("StudentRepo Logs");
 
-        } catch (SecurityException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (SecurityException | IOException e) {
             e.printStackTrace();
         }
 

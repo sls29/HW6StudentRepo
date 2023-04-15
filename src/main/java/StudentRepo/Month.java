@@ -15,9 +15,9 @@ public enum Month {
     DEC ("12","December", 31),
     ;
 
-    String monthOfYear;
-    String name;
-    int days;
+    final String monthOfYear;
+    final String name;
+    final int days;
     Month(String monthOfYear, String name, int days) {
         this.monthOfYear = monthOfYear;
         this.name = name;

@@ -8,7 +8,7 @@ import java.util.TreeSet;
 
 
 public class Aplic {
-    TreeSet<Student> Students = new TreeSet<Student>(new NameComparator());
+    TreeSet<Student> Students = new TreeSet<>(new NameComparator());
     SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy.HH:mm:ss");
     String timeStamp = df.format(new Date());
 
@@ -46,17 +46,17 @@ public class Aplic {
                 System.out.println(nextStudent);
             }
         }
-        String s1 = "All students listed";
-        return s1;
+        return "All students listed";
+
     }
 
     public String removeStudent(String cnp){
-        String name;
+
         for (Student nextStudent : Students) {
             if (Objects.equals(nextStudent.cnp, cnp)) {
             nextStudent.cnp = null;
-            String s1 = "Student " + nextStudent.firstName + " " + nextStudent.lastName + " was removed.";
-            System.out.println(s1);
+            String s6 = "Student " + nextStudent.firstName + " " + nextStudent.lastName + " was removed.";
+            System.out.println(s6);
             }
         }
         return null;
@@ -64,7 +64,6 @@ public class Aplic {
 
     public void listStudentsAtAgeOf(String age) {
         for (Student nextStudent : Students) {
-            int num = 0;
             LocalDate birthDate = LocalDate.parse(nextStudent.studentBirthday());
             Period p = Period.between(birthDate, LocalDate.now());
             if(age.equals(p.toString().substring(1,3))) {

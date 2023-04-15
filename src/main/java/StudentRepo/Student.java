@@ -20,8 +20,8 @@ public class Student extends Birthday {
         return super.toString();
     }
     public String toString(){
-        String s1 = firstName + " " + lastName + "; Day of birth: " +
+        return firstName + " " + lastName + "; Day of birth: " +
                 super.toString() + "; " + gender + "; CNP: " + cnp;
-        return s1;
+
     }
 }
