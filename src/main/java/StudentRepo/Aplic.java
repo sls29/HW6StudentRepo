@@ -28,7 +28,7 @@ public class Aplic {
             System.out.println(s2);
             return s2;
 
-        } else if ((cnp.length() != 13) || cnp.contains("[a-zA-Z")) {
+        } else if ((cnp.length() != 13) || cnp.contains("[a-zA-Z]")) {
             String s3 = "CNP incorrect";
             System.out.println(s3);
             return s3;
