@@ -1,8 +1,2 @@
-Apr 27, 2023 11:30:07 AM StudentRepo.App main
+Apr 27, 2023 12:54:36 PM StudentRepo.App main
 INFO: StudentRepo Logs
-Apr 27, 2023 11:30:07 AM StudentRepo.App main
-INFO: All students listed
-Apr 27, 2023 11:30:07 AM StudentRepo.App main
-INFO: null
-Apr 27, 2023 11:30:07 AM StudentRepo.App main
-INFO: All students listed

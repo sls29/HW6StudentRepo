@@ -32,23 +32,17 @@ public class App
 
         Aplic aplic = new Aplic();
 
-            aplic.addStudent("John", "Doe", 2001, Month.JAN,
+        aplic.addStudent("John", "Doe", 2001, Month.JAN,
                     "10", MALE, "1234567890123");
-
-
 
         aplic.addStudent("Billy", "Joy", 1991, Month.MAR,
                 "03", MALE, "1234667890123");
 
-
         aplic.addStudent("Lita", "Ford", 1994, Month.APR,
                 "21", FEMALE, "2234567890123");
 
-
         aplic.addStudent("", "", 2001, Month.AUG,
                     "24", MALE, "1234567890123");
-
-
 
         aplic.addStudent("Do", "Re", 2002, Month.DEC,
                     "02", MALE, "123456789012");
@@ -56,32 +50,19 @@ public class App
         aplic.addStudent("Do", "Re", 2012, Month.NOV,
                     "02", MALE, "1234567890123");
 
+        aplic.listAllStudents();
+
+        aplic.removeStudent("1234567890123");
+        aplic.removeStudent("12345678901288");
+        aplic.removeStudent("1234567890121");
 
         aplic.listAllStudents();
-        logger.info(aplic.listAllStudents());
-
-        aplic.removeStudent("123456789");
-        logger.info(aplic.removeStudent("123456789"));
-
-        aplic.listAllStudents();
-        logger.info(aplic.listAllStudents());
 
         aplic.listStudentsAtAgeOf("22");
 
         aplic.listStudentsAtAgeOf("28");
 
         aplic.listStudentsAtAgeOf("19");
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }

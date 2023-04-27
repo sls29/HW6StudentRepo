@@ -9,7 +9,7 @@ import java.util.TreeSet;
 
 public class Aplic {
     TreeSet<Student> Students = new TreeSet<>(new NameComparator());
-    SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy.HH:mm:ss");
+    SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     String timeStamp = df.format(new Date());
 
 
@@ -17,53 +17,69 @@ public class Aplic {
                            Gender gender, String cnp) {
 
         Student student = new Student(firstName, lastName, year, mount, day, gender, cnp);
+
         try {
-            if (student.firstName.isEmpty() || student.lastName.isEmpty()) {
-                throw new IllegalArgumentException();
+                if (student.firstName.isEmpty() || student.lastName.isEmpty()) {
+                    throw new IllegalArgumentException();
 
-            } else if ((year < 1900) || ((Year.now().getValue() - 18) < year)) {
-                throw new ArithmeticException();
+                } else if ((year < 1900) || ((Year.now().getValue() - 18) < year)) {
+                    throw new ArithmeticException();
 
-            } else if ((cnp.length() != 13) || cnp.contains("[a-zA-Z]")) {
-                throw new NumberFormatException();
+                } else if ((cnp.length() != 13) || cnp.contains("[a-zA-Z]")) {
+                    throw new NumberFormatException();
 
-            } else {
-                Students.add(student);
-                String s4 = timeStamp + " - " + student.firstName + " "
+                } else {
+                    Students.add(student);
+                    String s4 = timeStamp + " - " + student.firstName + " "
                         + student.lastName + " - is a new student";
-                System.out.println(s4);
-
-            }
+                    System.out.println(s4);
+                }
 
         } catch (NumberFormatException e) {
-            System.out.printf(timeStamp + " - CNP incorrect");
+            System.out.println(timeStamp + " - CNP incorrect");
         } catch (IllegalArgumentException e) {
-            System.out.printf(timeStamp + " - First name or last name cannot be empty");
+            System.out.println(timeStamp + " - First name or last name cannot be empty");
         } catch (ArithmeticException e) {
-            System.out.printf(timeStamp + " - This person is too young or too old to be a student");
+            System.out.println(timeStamp + " - This person is too young or too old to be a student");
         }
     }
 
         public String listAllStudents() {
+            System.out.println(" --- Students List --- ");
         for (Student nextStudent : Students ){
             if(nextStudent.cnp != null ) {
                 System.out.println(nextStudent);
             }
         }
+            System.out.println(" ");
         return "All students listed";
 
     }
 
-    public String removeStudent(String cnp){
-
-        for (Student nextStudent : Students) {
-            if (Objects.equals(nextStudent.cnp, cnp)) {
-            nextStudent.cnp = null;
-            String s6 = "Student " + nextStudent.firstName + " " + nextStudent.lastName + " was removed.";
-            System.out.println(s6);
+    public void removeStudent(String cnp){
+        int stud = 0;
+        try {
+            if (cnp.length() != 13 || cnp.contains("[a-zA-Z])")) {
+                throw new IllegalArgumentException();
             }
+
+            for (Student nextStudent : Students) {
+
+                if (Objects.equals(nextStudent.cnp, cnp)) {
+                    stud += 1;
+                    nextStudent.cnp = null;
+                    System.out.println(timeStamp + " Student " + nextStudent.firstName +
+                            " " + nextStudent.lastName + " was removed.");
+
+                }
+            }
+            if (stud == 0){
+                System.out.println(timeStamp + " Student not found ");
+            }
+
+        } catch(IllegalArgumentException e){
+            System.out.println(timeStamp + " CNP is invalid");
         }
-        return null;
     }
 
     public void listStudentsAtAgeOf(String age) {
