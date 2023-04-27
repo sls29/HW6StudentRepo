@@ -17,25 +17,34 @@ public class Aplic {
                            Gender gender, String cnp) {
 
         Student student = new Student(firstName, lastName, year, mount, day, gender, cnp);
+        try {
+            if (student.firstName.isEmpty() || student.lastName.isEmpty()) {
+                throw new IllegalArgumentException();
 
-        if (student.firstName.isEmpty() || student.lastName.isEmpty()) {
-            throw new ArithmeticException(timeStamp + " - First name or last name cannot be empty");
+            } else if ((year < 1900) || ((Year.now().getValue() - 18) < year)) {
+                throw new ArithmeticException();
 
-        } else if ((year < 1900) || ((Year.now().getValue() - 18) < year)) {
-            throw new ArithmeticException(timeStamp + " - This person is too young or too old to be a student");
+            } else if ((cnp.length() != 13) || cnp.contains("[a-zA-Z]")) {
+                throw new NumberFormatException();
 
-        } else if ((cnp.length() != 13) || cnp.contains("[a-zA-Z")) {
-            throw new ArithmeticException("CNP incorrect");
+            } else {
+                Students.add(student);
+                String s4 = timeStamp + " - " + student.firstName + " "
+                        + student.lastName + " - is a new student";
+                System.out.println(s4);
 
-        } else {
-            Students.add(student);
-            String s4 = timeStamp + " - " + student.firstName + " "
-                    + student.lastName + " - is a new student";
-            System.out.println(s4);
+            }
 
+        } catch (NumberFormatException e) {
+            System.out.printf(timeStamp + " - CNP incorrect");
+        } catch (IllegalArgumentException e) {
+            System.out.printf(timeStamp + " - First name or last name cannot be empty");
+        } catch (ArithmeticException e) {
+            System.out.printf(timeStamp + " - This person is too young or too old to be a student");
         }
     }
-    public String listAllStudents(){
+
+        public String listAllStudents() {
         for (Student nextStudent : Students ){
             if(nextStudent.cnp != null ) {
                 System.out.println(nextStudent);
