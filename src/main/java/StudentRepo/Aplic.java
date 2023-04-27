@@ -13,31 +13,25 @@ public class Aplic {
     String timeStamp = df.format(new Date());
 
 
-    public String addStudent(String firstName, String lastName, int year, Month mount, String day,
+    public void addStudent(String firstName, String lastName, int year, Month mount, String day,
                            Gender gender, String cnp) {
 
-        Student student = new Student(firstName, lastName, day, mount, year, gender, cnp);
+        Student student = new Student(firstName, lastName, year, mount, day, gender, cnp);
 
         if (student.firstName.isEmpty() || student.lastName.isEmpty()) {
-            String s1 = timeStamp + " - First name or last name cannot be empty";
-            System.out.println(s1);
-            return s1;
+            throw new ArithmeticException(timeStamp + " - First name or last name cannot be empty");
 
         } else if ((year < 1900) || ((Year.now().getValue() - 18) < year)) {
-            String s2 = timeStamp + " - This person is too young or too old to be a student";
-            System.out.println(s2);
-            return s2;
+            throw new ArithmeticException(timeStamp + " - This person is too young or too old to be a student");
 
         } else if ((cnp.length() != 13) || cnp.contains("[a-zA-Z")) {
-            String s3 = "CNP incorrect";
-            System.out.println(s3);
-            return s3;
+            throw new ArithmeticException("CNP incorrect");
+
         } else {
             Students.add(student);
             String s4 = timeStamp + " - " + student.firstName + " "
                     + student.lastName + " - is a new student";
             System.out.println(s4);
-            return s4;
         }
     }
     public String listAllStudents(){

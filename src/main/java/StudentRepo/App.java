@@ -31,36 +31,40 @@ public class App
         }
 
         Aplic aplic = new Aplic();
-
-        aplic.addStudent("John", "Doe", 2001, Month.JAN,
-                "10", MALE, "1234567890123");
-        logger.info(aplic.addStudent("John", "Doe", 2001, Month.JAN,
-                "10", MALE, "1234567890123"));
+        try {
+            aplic.addStudent("John", "Doe", 2001, Month.JAN,
+                    "10", MALE, "1234567890123");
+        } catch (ArithmeticException e) {
+            System.out.println(e.getMessage());
+        }
 
         aplic.addStudent("Billy", "Joy", 1991, Month.MAR,
                 "03", MALE, "1234667890123");
-        logger.info(aplic.addStudent("Billy", "Joy", 1991, Month.MAR,
-                "03", MALE, "1234667890123"));
+
 
         aplic.addStudent("Lita", "Ford", 1994, Month.APR,
                 "21", FEMALE, "2234567890123");
-        logger.info(aplic.addStudent("Lita", "Ford", 1994, Month.APR,
-                "21", FEMALE, "2234567890123"));
 
-        aplic.addStudent("", "",2001, Month.AUG,
-                "24", MALE, "1234567890123");
-        logger.info(aplic.addStudent("", "",2001, Month.AUG,
-                "24", MALE, "1234567890123"));
+        try {
+            aplic.addStudent("", "", 2001, Month.AUG,
+                    "24", MALE, "1234567890123");
+        } catch (ArithmeticException e) {
+            System.out.printf(e.getMessage());
+        }
 
-        aplic.addStudent("Do", "Re", 2002, Month.DEC,
-                "02", MALE, "123456789012");
-        logger.info(aplic.addStudent("Do", "Re", 2002, Month.DEC,
-                "02", MALE, "123456789012"));
+        try {
+            aplic.addStudent("Do", "Re", 2002, Month.DEC,
+                    "02", MALE, "123456789012");
+        } catch (ArithmeticException e) {
+            System.out.printf(e.getMessage());
+        }
 
-        aplic.addStudent("Do", "Re", 2012, Month.NOV,
-                "02", MALE, "1234567890123");
-        logger.info(aplic.addStudent("Do", "Re", 2012, Month.NOV,
-                "02", MALE, "1234567890123"));
+        try {
+            aplic.addStudent("Do", "Re", 2012, Month.NOV,
+                    "02", MALE, "1234567890123");
+        } catch (ArithmeticException e) {
+            System.out.printf(e.getMessage());
+        }
 
         aplic.listAllStudents();
         logger.info(aplic.listAllStudents());
