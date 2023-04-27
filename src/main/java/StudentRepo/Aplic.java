@@ -19,21 +19,21 @@ public class Aplic {
         Student student = new Student(firstName, lastName, year, mount, day, gender, cnp);
 
         try {
-                if (student.firstName.isEmpty() || student.lastName.isEmpty()) {
-                    throw new IllegalArgumentException();
+            if (student.firstName.isEmpty() || student.lastName.isEmpty()) {
+                throw new IllegalArgumentException();
 
-                } else if ((year < 1900) || ((Year.now().getValue() - 18) < year)) {
-                    throw new ArithmeticException();
+            } else if ((year < 1900) || ((Year.now().getValue() - 18) < year)) {
+                throw new ArithmeticException();
 
-                } else if ((cnp.length() != 13) || cnp.contains("[a-zA-Z]")) {
-                    throw new NumberFormatException();
+            } else if ((cnp.length() != 13) || cnp.contains("[a-zA-Z]")) {
+                throw new NumberFormatException();
 
-                } else {
-                    Students.add(student);
-                    String s4 = timeStamp + " - " + student.firstName + " "
+            } else {
+                Students.add(student);
+                String s4 = timeStamp + " - " + student.firstName + " "
                         + student.lastName + " - is a new student";
-                    System.out.println(s4);
-                }
+                System.out.println(s4);
+            }
 
         } catch (NumberFormatException e) {
             System.out.println(timeStamp + " - CNP incorrect");
@@ -44,7 +44,7 @@ public class Aplic {
         }
     }
 
-        public String listAllStudents() {
+        public void listAllStudents() {
             System.out.println(" --- Students List --- ");
         for (Student nextStudent : Students ){
             if(nextStudent.cnp != null ) {
@@ -52,9 +52,7 @@ public class Aplic {
             }
         }
             System.out.println(" ");
-        return "All students listed";
-
-    }
+        }
 
     public void removeStudent(String cnp){
         int stud = 0;
