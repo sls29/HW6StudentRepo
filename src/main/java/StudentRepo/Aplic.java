@@ -83,13 +83,17 @@ public class Aplic {
     }
 
     public void listStudentsAtAgeOf(String age) {
+        int stud = 0;
         for (Student nextStudent : Students) {
             LocalDate birthDate = LocalDate.parse(nextStudent.studentBirthday());
             Period p = Period.between(birthDate, LocalDate.now());
             if(age.equals(p.toString().substring(1,3))) {
-                System.out.println(nextStudent.firstName + " is " + age + " years old.");
+                stud += 1;
+                System.out.println(timeStamp + " " + nextStudent.firstName + " is " + age + " years old.");
             }
         }
-
+        if(stud == 0) {
+            System.out.println(timeStamp + " None of our students is " + age + " old");
+        }
     }
 }
